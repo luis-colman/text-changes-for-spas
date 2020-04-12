@@ -1,0 +1,28 @@
+{
+  "plugin_type": "widget",
+  "name": "Text Changes for SPAs",
+  "edit_page_url": "https://www.atticandbutton.com",
+  "form_schema": [
+    {
+      "default_value": "",
+      "field_type": "selector",
+      "name": "selector",
+      "label": "Seletor",
+      "options": null
+    },
+    {
+      "default_value": "",
+      "field_type": "multi_text",
+      "name": "text",
+      "label": "Text to Change",
+      "options": null
+    }
+  ],
+  "description": "Extension for SPAs that do not support changes using innerHTML",
+  "options": {
+    "apply_js": "function onActionApplied(event) {\n  window['page_'+extension.$instance] = event.data.pageId;\n}\n\nwindow.optimizely.push({\n  'type': 'addListener',\n  'filter': {\n    'type': 'action',\n    'name': 'applied'\n  },\n  'handler': onActionApplied\n});\n\nvar vars = {};\nvars['selectorField_'+extension.$instance] = extension.selector;\nvars['textField_'+extension.$instance] = extension.text;\nvars['pageId_'+extension.$instance] = extension.page_id;\n\nif (vars['selectorField_'+extension.$instance] !== '' && vars['textField_'+extension.$instance] !== '' && vars['pageId_'+extension.$instance] !== '') {\n  \n  var utils = optimizely.get('utils');\n  \n  // 1) Retrieve the utils library\n  var utils = window['optimizely'].get('utils');\n  \n  // 2) Wait for element to exist in the DOM, then apply change\n  utils.waitForElement(extension.selector).then(function() {\n\n    // 3) Apply change before activating the MutationObserver\n    document.querySelector(extension.selector).parentNode.setAttribute('optly-'+extension.$instance,'');\n    document.querySelector(extension.selector).firstChild.nodeValue = extension.text;\n\n    // 4) Define element to observe\n    vars['target_'+extension.$instance] = document.querySelector('[optly-'+extension.$instance+']');\n\n    // 5) MutationObserver Config Options\n    vars['config_'+extension.$instance] = {\n      //attributes: true,\n      characterData: true,\n      childList: true,\n      subtree: true\n    };\n\n    // 6) Mutation Subscriber Function\n    vars['subscriber_'+extension.$instance] = function(mutations) {\n      mutations.forEach(function(mutation) {\n\n        // 7) Check if the Page where this change lives is active\n        if (optimizely.get('state').getPageStates()[window['page_'+extension.$instance]].isActive) {\n\n          // 8) If the Page where this change lives is active, check if text is as previously set and if not, re-apply change\n          if (document.querySelector(extension.selector).firstChild.nodeValue != extension.text) {\n            document.querySelector(extension.selector).firstChild.nodeValue = extension.text;\t    \n          }\n        } \n\n        // 9) If the Page where this change lives is not active, disconnect MutationObserver (for later on)\n        else {\n          vars['observer_'+extension.$instance].disconnect();\n        }\n      });\n    };\n\n    // 10) Activate Mutation Observer\n    vars['observer_'+extension.$instance] = new MutationObserver(vars['subscriber_'+extension.$instance]);\n    vars['observer_'+extension.$instance].observe(vars['target_'+extension.$instance], vars['config_'+extension.$instance]);\n  });\n}",
+    "html": "",
+    "css": "",
+    "undo_js": "\n"
+  }
+}
