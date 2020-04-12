@@ -42,4 +42,4 @@ This extension applies changes in a different manner than the Visual Editor, all
 10. Enter the desired text in the textbox below the selector field and save your changes
 
 
-** -- END -- **
+**-- END --**
