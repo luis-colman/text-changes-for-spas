@@ -2,11 +2,11 @@
 
 This Optimizely extension allows to apply plain-text changes on SPAs where the below scenarios occur: 
 
-that re-inject content on the chosen element(s) more than twice during pageload and/or for SPAs where elements get de-attached from the SPA once changed via *innerHTML* (meaning elements don't respond to updates triggered natively by the SPA after they have been modified by Optimizely using *innerHTML*).
+that re-inject content on the chosen element(s) more than twice during pageload and/or for SPAs where elements get de-attached from the SPA once changed via **innerHTML** (meaning elements don't respond to updates triggered natively by the SPA after they have been modified by Optimizely using **innerHTML**).
 
 1) In some situations SPAs may inject and re-inject content more than twice during pageload. This may result in Optimizely not blocking/re-applying changes indefinitely during pageload (to prevent the browser from overheating) allowing original content to persist/remain and not displaying the variation change
 
-2) In some SPAs elements don't respond to updates triggered natively by the SPA after they have been modified by Optimizely using *innerHTML* even if the experiment/Page is deactivated.
+2) In some SPAs elements don't respond to updates triggered natively by the SPA after they have been modified by Optimizely using **innerHTML** even if the experiment/Page is deactivated.
 
 This extension applies changes in a different manner than the Visual Editor, allowing to apply changes even in the cases mentioned above.
 
@@ -42,4 +42,4 @@ This extension applies changes in a different manner than the Visual Editor, all
 10. Enter the desired text in the textbox below the selector field and save your changes
 
 
-* -- END -- *
+** -- END -- **
