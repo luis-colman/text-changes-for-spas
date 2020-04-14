@@ -13,7 +13,7 @@ This extension applies changes in a different manner than the Visual Editor, all
 (**_*Note_**: this extension is meant to allow plain-text changes only. It **_does not_** cover further HTML changes).
 
 
-## Install the "Text Changes for SPAs" Extension
+## Install the "_Text Changes for SPAs_" Extension
 
 1. In your Optimizely account, navigate to "**_Implementation > Extensions_**".
 
