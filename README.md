@@ -6,7 +6,7 @@ that re-inject content on the chosen element(s) more than twice during pageload 
 
 1) In some situations SPAs may inject and re-inject content more than twice during pageload. This may result in Optimizely not blocking/re-applying changes indefinitely during pageload (to prevent the browser from overheating) allowing original content to persist/remain and not displaying the variation change
 
-2) In some SPAs elements don't respond to updates triggered natively by the SPA after they have been modified using **_innerHTML_** even if the experiment/Page is deactivated.(The feature "_**Element Change**_" from the Visual Editor uses **_innerHTML_**).<br/>_(For more info regarding this phenomenon visit the link below:<br/>https://stackoverflow.com/questions/39960933/manual-innerhtml-modification-on-dom-halts-reactjs-listeners)_
+2) In some SPAs elements don't respond to updates triggered natively by the SPA after they have been modified using **_innerHTML_** even if the experiment/Page is deactivated. (The feature "_**Element Change**_" from the Visual Editor uses **_innerHTML_**).<br/>_(For more info regarding this phenomenon visit the link below:<br/>https://stackoverflow.com/questions/39960933/manual-innerhtml-modification-on-dom-halts-reactjs-listeners)_
 
 This extension applies changes in a different manner than the Visual Editor, allowing to apply changes even in the cases mentioned above.
 
