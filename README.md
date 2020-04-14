@@ -1,4 +1,4 @@
-# Text Changes for SPAs Extension
+# "**_Text Changes for SPAs**_" Optimizely Extension
 
 This Optimizely extension allows to apply plain-text changes on SPAs where the below scenarios occur: 
 
