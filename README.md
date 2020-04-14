@@ -29,7 +29,7 @@ This extension applies changes in a different manner than the Visual Editor, all
 
 6. Before you can use this extension, you need to enable it. After uploading the JSON file the extension will be in "**_draft_**" state. To enable the extension, navigate to "**_Implementation > Extensions_**" and click the **_..._** icon for the "**_Text Changes for SPAs**_" extension and select "**_Enable_**".
 
-![Image description](https://github.com/luis-colman/text-changes-for-spas/blob/master/images/enable_extension.png)
+![Image description](https://github.com/luis-colman/text-changes-for-spas/blob/master/images/enable_optimizely_extension.png)
 
 7. To start using your extension in experiments, simply go into the variation where you want to use this extension and click "**_Create_**" (as you normally do for any other visual change).
 
