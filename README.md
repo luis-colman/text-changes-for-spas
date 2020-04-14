@@ -27,9 +27,9 @@ This extension applies changes in a different manner than the Visual Editor, all
 
 ![Image description](https://github.com/luis-colman/text-changes-for-spas/blob/master/images/create_extension_from_json.png)
 
-5. If you want to see how the extension is built, simply click the extension name "**_Text Changes for SPAs_**". In the Editable Fields panel, you can see and change the current fields the extension contains (selector and textbox). Here you can also see the JavaScript code the extension uses by clicking on "**_Apply JS_**", where can also make changes if desired.
+5. If you want to see how the extension is built, simply click the extension name "**_Text Changes for SPAs_**". In the "**_Editable Fields_**" panel, you can see and change the current fields the extension contains (selector and textbox). Here you can also see the JavaScript code the extension uses by clicking on "**_Apply JS_**", where can also make changes if desired.
 
-6. Before you can use this extension, you need to enable it. After uploading the JSON file the extension will in "**_draft_**" state. To enable the extension, navigate to "**_Implementation > Extensions_**" and click the **_..._** icon for the "**_Text Changes for SPAs**_" extension and select "**_Enable_**".
+6. Before you can use this extension, you need to enable it. After uploading the JSON file the extension will be in "**_draft_**" state. To enable the extension, navigate to "**_Implementation > Extensions_**" and click the **_..._** icon for the "**_Text Changes for SPAs**_" extension and select "**_Enable_**".
 
 ![Image description](https://github.com/luis-colman/text-changes-for-spas/blob/master/images/enable_extension.png)
 
@@ -37,9 +37,9 @@ This extension applies changes in a different manner than the Visual Editor, all
 
 8. Under "**_Create Options_**", select "**_Text Changes for SPAs_**".
 
-9. Select the element to change. (Make sure you select the exact element that contains the text that you want to change and not parent elements higher in the HTML structure).
+9. Select the element to change. (Make sure you select the exact element that contains the text that you want to change and not parent elements higher in the DOM tree).
 
-10. Enter the desired text in the textbox below the selector field and save your changes
+10. Enter the desired text in the textbox below the selector field and save your changes.
 
 
 **_-- END --_**
